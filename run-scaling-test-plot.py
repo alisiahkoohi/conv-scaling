@@ -54,12 +54,7 @@ if __name__ == '__main__':
               (0.0, 0.584, 1.0),
               (1.0, 0.0, 0.286),
               (0.0, 0.584, 0.239),
-              '#c2c22f',
-              '#8a8a8a',
-              '#a1c0ff',
-              '#ff9191',
-              '#91eda2',
-              '#ffff61']
+              '#c2c22f']
 
     figs = []
     axs = []
@@ -79,13 +74,22 @@ if __name__ == '__main__':
                 for n in info[file]["n"]:
                     if (nch, k, n) in info[file].keys():
 
+                        if j == 1:
+                            marker = 'v'
+                        else:
+                            marker = 'o'
+
                         run_times.append(info[file][nch, k, n][0])
                         n_list.append(n)
                         axs[r].scatter(n, info[file][nch, k, n][0],
-                                       color=colors[5*j + i], s=0.8)
+                                       s=2, color=colors[i], marker=marker)
 
-                axs[r].plot(n_list, run_times, color=colors[5*j + i],
-                            linewidth=0.7,
+                if j == 1:
+                    linestyle = '--'
+                else:
+                    linestyle = '-'
+                axs[r].plot(n_list, run_times, color=colors[i],
+                            linewidth=0.4, linestyle=linestyle,
                             label=(file[:file.find('-')] + " — "
                                    + r"$k={{{}}}$".format(k)))
 
@@ -125,16 +129,26 @@ if __name__ == '__main__':
                 for n in info[file]["n"]:
                     if (nch, k, n) in info[file].keys():
 
+                        if j == 1:
+                            marker = 'v'
+                        else:
+                            marker = 'o'
+
                         memory.append(info[file][nch, k, n][1])
                         n_list.append(n)
                         axs[r].scatter(n, info[file][nch, k, n][1],
-                                       color=colors[j], s=0.8)
+                                       s=2, color=colors[j], marker=marker)
 
                 if k == 3:
                     label = (file[:file.find('-')] + r", $k=3, 5, 7, 9, 11$")
                 else:
                     label = '_no_label_'
+                if j == 1:
+                    linestyle = '--'
+                else:
+                    linestyle = '-'
                 axs[r].plot(n_list, memory, color=colors[j],
+                            linestyle=linestyle,
                             linewidth=0.3, label=label, alpha=0.7)
 
             axs[r].legend(fontsize=6, ncol=2, loc='upper left')
