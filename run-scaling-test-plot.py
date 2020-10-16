@@ -54,7 +54,12 @@ if __name__ == '__main__':
               (0.0, 0.584, 1.0),
               (1.0, 0.0, 0.286),
               (0.0, 0.584, 0.239),
-              '#c2c22f']
+              '#c2c22f',
+              '#8a8a8a',
+              '#a1c0ff',
+              '#ff9191',
+              '#91eda2',
+              '#ffff61']
 
     figs = []
     axs = []
@@ -82,13 +87,14 @@ if __name__ == '__main__':
                         run_times.append(info[file][nch, k, n][0])
                         n_list.append(n)
                         axs[r].scatter(n, info[file][nch, k, n][0],
-                                       s=2, color=colors[i], marker=marker)
+                                       s=2, color=colors[5*j + i],
+                                       marker=marker)
 
                 if j == 1:
                     linestyle = '--'
                 else:
                     linestyle = '-'
-                axs[r].plot(n_list, run_times, color=colors[i],
+                axs[r].plot(n_list, run_times, color=colors[5*j + i],
                             linewidth=0.4, linestyle=linestyle,
                             label=(file[:file.find('-')] + " — "
                                    + r"$k={{{}}}$".format(k)))
