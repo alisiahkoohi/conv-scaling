@@ -16,34 +16,34 @@ pip install -e .
 
 * number of channels: 2
 
-![](figs/runtime_nch0.png)
+![](figs/runtime_nch0)
 
 * number of channels: 4
 
-![](figs/runtime_nch1.png)
+![](figs/runtime_nch1)
 
 * number of channels: 8
 
-![](figs/runtime_nch2.png)
+![](figs/runtime_nch2)
 
 * number of channels: 16
 
-![](figs/runtime_nch3.png)
+![](figs/runtime_nch3)
 
 ## Peak memory
 
 * number of channels: 2
 
-![](figs/memory_nch0.png)
+![](figs/memory_nch0)
 
 * number of channels: 4
 
-![](figs/memory_nch1.png)
+![](figs/memory_nch1)
 
 * number of channels: 8
 
-![](figs/memory_nch2.png)
+![](figs/memory_nch2)
 
 * number of channels: 16
 
-![](figs/memory_nch3.png)
+![](figs/memory_nch3)
